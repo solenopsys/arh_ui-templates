@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+html *
+{
+  font-family:Roboto  ;
+}
+
+a {
+  color:   var(--font) !important;
+}
+
+button {
+  color:   var(--font) !important;
+}
+
+input{
+  background-color: var(--inputBackground);
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  width: auto;
+  height: 30px;
+  min-width: 250px;
+  border: 0.2px;
+  border-color: #6c6c6c;
+  border-style: solid;
+}
+
+button{
+  background-color: var(--buttonBackground);
+  border: none;
+}
+
+
+
+
+@font-face {
+  font-family: RedHatDisplay;
+  src:   url('/assets/fonts/RedHatDisplay/RedHatDisplay-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: Roboto;
+
+  src:   url('/assets/fonts/Roboto/Roboto-Regular.ttf')  format('truetype');
+}
+
+
+@font-face {
+  font-family: "Roboto Light";
+  src:   url('/assets/fonts/Roboto/Roboto-Light.ttf')  format('truetype');
+}
+
+
+
+@font-face {
+  font-family: Inter;
+  src:   url('/assets/fonts/Inter/static/Inter-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat;
+  src:   url('/assets/fonts/Montserrat/Montserrat-Regular.ttf')  format('truetype');
+}
+
+
+
+body{
+  margin: 0;
+  color: white;
+}
+
+input{
+  font-size: 15px;
+}
+
+textarea{
+  background-color: var(--inputBackground);
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  width: auto;
+  min-width: 250px;
+  border: 0.2px;
+  border-color: #6c6c6c;
+  border-style: solid;
+  font-size: 15px;
+}

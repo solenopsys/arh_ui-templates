@@ -1,0 +1,12 @@
+<div  style="padding: 20px">
+    <fui-sselect-enity
+            [(value)]="scope"
+            [dataProvider]="dp">
+    </fui-sselect-enity>
+
+    <button (click)="scopeChange()">Присвоить</button>
+
+    <div *ngFor="let item of items | keyvalue" style="padding: 5px;"> {{item.value[model.conf.nameField]}}</div>
+
+
+</div>

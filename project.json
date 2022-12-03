@@ -1,0 +1,27 @@
+{
+  "name": "templates",
+  "projectType": "library",
+  "sourceRoot": "libs/fui/templates/src",
+  "prefix": "hyperconverged",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/fui/templates"],
+      "options": {
+        "jestConfig": "libs/fui/templates/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/fui/templates/src/**/*.ts",
+          "libs/fui/templates/src/**/*.html"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}

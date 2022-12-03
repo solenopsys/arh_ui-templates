@@ -1,0 +1,11 @@
+{
+  "name": "@solenopsys/uimatrix-templates",
+  "version": "0.0.1",
+  "dependencies": {
+    "moment": "^2.29.4"
+  },
+  "scripts": {
+    "test": "node index.js",
+    "build": "tsc -p tsconfig.lib.json"
+  }
+}
