@@ -5,7 +5,7 @@ import {DataPageConfig} from "@solenopsys/lib-dgraph";
 import {Navigate} from "@ngxs/router-plugin";
 import {Observable, Subscription} from "rxjs";
 import {DeleteRowDialog, GridState, LoadGridConf} from "./table.store";
-import {IdService} from "@solenopsys/lib-utils";
+import {IdService} from "@solenopsys/lib-globals";
 import {DeleteRow,  InitGroup, RowsGroup} from "@solenopsys/uimatrix-lists";
 import {COMMANDS_MAP} from "../commands";
 import {DialogConfig} from "@solenopsys/uimatrix-modals";

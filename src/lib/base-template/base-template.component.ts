@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {Cluster, ClusterState, SelectCluster} from '@solenopsys/lib-clusters';
 import {MenuItemData} from "@solenopsys/uimatrix-layouts";
 import {ColorSchemesService} from "@solenopsys/uimatrix-themes";
-import {ModulesService} from "@solenopsys/lib-utils";
+import {ModulesService} from "@solenopsys/lib-globals";
 import {Router} from "@angular/router";
 
 

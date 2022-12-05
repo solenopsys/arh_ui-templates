@@ -2,7 +2,7 @@ import {Component, ElementRef, Inject, OnInit, ViewEncapsulation} from '@angular
 import {ColorSchemesService} from "@solenopsys/uimatrix-themes";
 import {Router} from "@angular/router";
 import { Select, Store } from "@ngxs/store";
-import {ModulesService} from "@solenopsys/lib-utils";
+import {ModulesService} from "@solenopsys/lib-globals";
 import {MenuItemData} from "@solenopsys/uimatrix-layouts";
 import { Cluster, ClusterState } from "@solenopsys/lib-clusters";
 import { Observable } from "rxjs";

@@ -11,6 +11,7 @@
     }
   ],
   "compilerOptions": {
+    "importHelpers": true,
     "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
