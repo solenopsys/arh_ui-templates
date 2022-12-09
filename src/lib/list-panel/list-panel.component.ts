@@ -16,6 +16,9 @@ export class ListPanelComponent implements OnInit {
   tableKey!: string;
   module!: string;
 
+  //todo это затычка чтоб компилировалось.
+  model:any;
+
   constructor(private route: ActivatedRoute, private draph: DgraphService, private router: Router ) {
   }
 
