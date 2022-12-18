@@ -92,7 +92,7 @@ export class TablePageComponent implements OnInit, OnDestroy {
       this.commands.push(COMMANDS_MAP[key])
     });
     const columnsWidthDefault={}
-    conf.fields.forEach(field=>columnsWidthDefault[field.key]=250)
+    conf.fields.forEach((field:any)=>columnsWidthDefault[field.key]=250)
     const newGroup: RowsGroup = {
       rows: [],
       checked: [],

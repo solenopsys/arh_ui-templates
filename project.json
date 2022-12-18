@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/uimatrix/templates"],
+      "outputs": [
+        "coverage/packages/uimatrix/templates"
+      ],
       "options": {
         "jestConfig": "packages/uimatrix/templates/jest.config.js",
         "passWithNoTests": true
@@ -20,7 +22,9 @@
           "packages/uimatrix/templates/src/**/*.html"
         ]
       },
-      "outputs": ["{options.outputFile}"]
+      "outputs": [
+        "{options.outputFile}"
+      ]
     }
   },
   "tags": []

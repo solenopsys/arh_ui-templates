@@ -34,12 +34,12 @@ export class BootstrapComponent implements OnInit {
               private modules: ModulesService,
               @Inject('single_start') public singleStart
   ) {
-    console.log("BOOTSTRAP")
+    console.log("BOOTSTRAP singleStart: "+singleStart)
 
     this.current$.pipe().subscribe(cluster=>{
       this.menu = [];
       if (singleStart) {
-        modules.loadModuleMenuDevelop().then(menuItems => {
+        modules.loadModuleMenuDevelop(false).then(menuItems => {
           this.menu = menuItems[0].items;
         })
       } else {
