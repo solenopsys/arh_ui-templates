@@ -3,14 +3,14 @@
 
 <div style="height: border-box">
   <div style="width: 100%; background-color: var(--topPaneBackground); position: fixed; top:0px; z-index: 1; ">
-    <fui-top-pane (menuClick)="showMenu()" [selected]="(current$|async)?.host" [tabs$]="tabs$"
-                  (tabClick)="selectCluster($event)"></fui-top-pane>
+    <ui-top-pane (menuClick)="showMenu()" [selected]="(current$|async)?.host" [tabs$]="tabs$"
+                  (tabClick)="selectCluster($event)"></ui-top-pane>
   </div>
 
 
   <div [ngClass]="mobileMenu?'main_menu_mobile':'main_menu'" (click)="mobileMenu=false">
     <div class="main_menu_wrapper">
-      <fui-smenu [data]="menu"></fui-smenu>
+      <ui-smenu [data]="menu"></ui-smenu>
     </div>
   </div>
   <div class="main_content">

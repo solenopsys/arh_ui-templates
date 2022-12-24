@@ -5,7 +5,7 @@ import {DgraphDataProvider, DgraphService, QueryGen} from "@solenopsys/lib-dgrap
 import {firstValueFrom} from "rxjs";
 
 @Component({
-  selector: 'fui-list-panel',
+  selector: 'ui-list-panel',
   templateUrl: './list-panel.component.html',
   styleUrls: ['./list-panel.component.css']
 })

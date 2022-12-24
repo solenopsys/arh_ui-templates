@@ -3,14 +3,14 @@ import {Select, Store} from '@ngxs/store';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Cluster, ClusterState, SelectCluster} from '@solenopsys/lib-clusters';
-import {MenuItemData} from "@solenopsys/uimatrix-layouts";
+import {MenuItemData} from "@solenopsys/uimatrix-navigate";
 import {ColorSchemesService} from "@solenopsys/uimatrix-themes";
 import {ModulesService} from "@solenopsys/lib-globals";
 import {Router} from "@angular/router";
 
 
 @Component({
-  selector: 'fui-base-template',
+  selector: 'ui-base-template',
   templateUrl: './base-template.component.html',
   styleUrls: ['./base-template.component.css'],
 })

@@ -12,7 +12,7 @@ import {DialogConfig} from "@solenopsys/uimatrix-modals";
 
 
 @Component({
-  selector: 'fui-table-page',
+  selector: 'ui-table-page',
   templateUrl: './table-page.component.html',
   styleUrls: ['./table-page.component.css']
 })

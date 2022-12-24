@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Form Panel",
+    "name": "ui-form-panel"
+  },
+  {
+    "title": "Info Panel",
+    "name": "ui-info-panel"
+  },
+  {
+    "title": "List Panel",
+    "name": "ui-list-panel"
+  }
+]

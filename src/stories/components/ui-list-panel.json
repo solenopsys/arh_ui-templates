@@ -1,0 +1,9 @@
+{
+  "name": "List Panel",
+  "description": "List Panel component",
+  "package": "@solenopsys/uimatrix-templates",
+  "component": "ListPanelComponent",
+  "io": {
+
+  }
+}

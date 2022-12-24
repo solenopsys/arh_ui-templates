@@ -6,7 +6,7 @@ import {firstValueFrom, Observable} from "rxjs";
 import {GridState} from "@solenopsys/uimatrix-templates";
 import {Store} from "@ngxs/store";
 
-interface UidMap {
+interface UIdMap {
   [key: string]: string;
 }
 
@@ -15,7 +15,7 @@ function clone(obj) {
 }
 
 @Component({
-  selector: 'fui-form-panel',
+  selector: 'ui-form-panel',
   templateUrl: './form-panel.component.html',
   styleUrls: ['./form-panel.component.css']
 })
@@ -66,7 +66,7 @@ export class FormPanelComponent implements OnInit {
 
 
   saveForm() {
-    firstValueFrom( this.dataListInterface.save(this.itemId, this.formData, this.formDataBefore,this.conf )).then((result: { code: string, uids?: UidMap }) => {
+    firstValueFrom( this.dataListInterface.save(this.itemId, this.formData, this.formDataBefore,this.conf )).then((result: { code: string, uids?: UIdMap }) => {
       if (result.code === 'Success') {
         console.log('NAVIGATE', result);
         // @ts-ignore

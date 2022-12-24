@@ -1,20 +1,20 @@
 <div style="height: calc(100vh - 100px) !important; display: flex; margin-right: 400px ">
 
   <div style="width: 100%  ">
-    <fui-sinfinity-table
+    <ui-infinity-table
       #infinity
       [key]="tableKey">
-    </fui-sinfinity-table>
+    </ui-infinity-table>
   </div>
   <div style="width: 30px;padding-top: 30px;height: auto; background-color: #f5f5f5">
-    <fui-icon-button icon="/assets/icons/01-Interface-Essential/43-Remove-Add/add-bold.svg" title="Добавить"
-                     (click)="add()"></fui-icon-button>
+    <ui-icon-button icon="/assets/icons/01-Interface-Essential/43-Remove-Add/add-bold.svg" title="Добавить"
+                     (click)="add()"></ui-icon-button>
     <div style="writing-mode: vertical-rl; margin-left: 5px;margin-top: 10px" *ngIf="conf$| async;let conf">
       <b>{{conf.title}}</b>
     </div>
   </div>
 </div>
 
-<fui-modal [(visible)]="visibleDialog" [config]="dialogConfig"></fui-modal>
+<ui-modal [(visible)]="visibleDialog" [config]="dialogConfig"></ui-modal>
 <router-outlet></router-outlet>
 

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'fui-info-panel',
+    selector: 'ui-info-panel',
     templateUrl: './info-panel.component.html',
     styleUrls: ['./info-panel.component.css']
 })

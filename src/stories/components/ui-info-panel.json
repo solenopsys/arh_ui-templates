@@ -1,0 +1,9 @@
+{
+  "name": "Info Panel",
+  "description": "Info Panel component",
+  "package": "@solenopsys/uimatrix-templates",
+  "component": "InfoPanelComponent",
+  "io": {
+
+  }
+}

@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'fui-templates',
+  displayName: 'ui-templates',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {

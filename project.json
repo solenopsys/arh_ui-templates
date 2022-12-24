@@ -2,7 +2,7 @@
   "name": "templates",
   "projectType": "library",
   "sourceRoot": "packages/uimatrix/templates/src",
-  "prefix": "sc",
+  "prefix": "ui",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
