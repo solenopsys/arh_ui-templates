@@ -6,9 +6,9 @@ import {Navigate} from "@ngxs/router-plugin";
 import {Observable, Subscription} from "rxjs";
 import {DeleteRowDialog, GridState, LoadGridConf} from "./table.store";
 import {IdService} from "@solenopsys/lib-globals";
-import {DeleteRow,  InitGroup, RowsGroup} from "@solenopsys/uimatrix-lists";
+import {DeleteRow,  InitGroup, RowsGroup} from "@solenopsys/ui-lists";
 import {COMMANDS_MAP} from "../commands";
-import {DialogConfig} from "@solenopsys/uimatrix-modals";
+import {DialogConfig} from "@solenopsys/ui-modals";
 
 
 @Component({

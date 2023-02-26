@@ -5,18 +5,18 @@ import {FormPanelComponent} from "./panels/form-panel/form-panel.component";
 import {ListPanelComponent} from "./panels/list-panel/list-panel.component";
 import {InfoPanelComponent} from "./panels/info-panel/info-panel.component";
 import {RouterModule} from "@angular/router";
-import {UIFormsModule} from "@solenopsys/uimatrix-forms";
-import {UIIconsModule} from "@solenopsys/uimatrix-icons";
-import {UIListsModule} from "@solenopsys/uimatrix-lists";
+import {UIFormsModule} from "@solenopsys/ui-forms";
+import {UIIconsModule} from "@solenopsys/ui-icons";
+import {UIListsModule} from "@solenopsys/ui-lists";
 import {BaseTemplateComponent} from "./base-template/base-template.component";
 
 import {BootstrapComponent} from "./bootstrap/bootstrap.component";
 
-import {DeclaredService} from "@solenopsys/uimatrix-utils";
-import {UILayoutsModule} from "@solenopsys/uimatrix-layouts";
-import {UIModalsModule} from "@solenopsys/uimatrix-modals";
-import {UIControlsModule} from "@solenopsys/uimatrix-controls";
-import {UINavigateModule} from "@solenopsys/uimatrix-navigate";
+import {DeclaredService} from "@solenopsys/ui-utils";
+import {UILayoutsModule} from "@solenopsys/ui-layouts";
+import {UIModalsModule} from "@solenopsys/ui-modals";
+import {UIControlsModule} from "@solenopsys/ui-controls";
+import {UINavigateModule} from "@solenopsys/ui-navigate";
 
 export const TABLE_PAGE = (path: string) => {
     return {
@@ -52,6 +52,6 @@ const components = [
 })
 export class UITemplatesModule {
     constructor(private ds: DeclaredService) {
-        ds.addComps("@solenopsys/uimatrix-templates", components)
+        ds.addComps("@solenopsys/ui-templates", components)
     }
 }

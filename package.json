@@ -1,5 +1,5 @@
 {
-  "name": "@solenopsys/uimatrix-templates",
+  "name": "@solenopsys/ui-templates",
   "version": "0.0.1",
   "dependencies": {
     "moment": "^2.29.4"

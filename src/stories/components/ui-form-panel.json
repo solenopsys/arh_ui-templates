@@ -1,7 +1,7 @@
 {
   "name": "Form Panel",
   "description": "Form Panel component",
-  "package": "@solenopsys/uimatrix-templates",
+  "package": "@solenopsys/ui-templates",
   "component": "FormPanelComponent",
   "io": {
 

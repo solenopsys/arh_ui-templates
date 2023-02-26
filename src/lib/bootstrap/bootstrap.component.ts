@@ -1,11 +1,11 @@
 import {Component, ElementRef, Inject, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {ColorSchemesService} from "@solenopsys/uimatrix-themes";
+import {ColorSchemesService} from "@solenopsys/ui-themes";
 import {Router} from "@angular/router";
 import {Select, Store} from "@ngxs/store";
 import {ModulesService} from "@solenopsys/lib-globals";
 import {Cluster, ClusterState} from "@solenopsys/lib-clusters";
 import {Observable} from "rxjs";
-import {MenuItemData} from "@solenopsys/uimatrix-navigate";
+import {MenuItemData} from "@solenopsys/ui-navigate";
 
 @Component({
   selector: 'hyperconverged-bootstrap',

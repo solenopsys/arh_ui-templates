@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {now} from 'moment';
 import {DataItemInterface, DataPageConfig, DgraphService} from "@solenopsys/lib-dgraph";
 import {firstValueFrom, Observable} from "rxjs";
-import {GridState} from "@solenopsys/uimatrix-templates";
+import {GridState} from "@solenopsys/ui-templates";
 import {Store} from "@ngxs/store";
 
 interface UIdMap {

@@ -1,5 +1,5 @@
 import {Navigate} from "@ngxs/router-plugin";
-import {DeleteRowDialog} from "@solenopsys/uimatrix-templates";
+import {DeleteRowDialog} from "@solenopsys/ui-templates";
 
 
 interface Command {

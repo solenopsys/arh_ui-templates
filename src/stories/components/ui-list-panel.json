@@ -1,7 +1,7 @@
 {
   "name": "List Panel",
   "description": "List Panel component",
-  "package": "@solenopsys/uimatrix-templates",
+  "package": "@solenopsys/ui-templates",
   "component": "ListPanelComponent",
   "io": {
 
