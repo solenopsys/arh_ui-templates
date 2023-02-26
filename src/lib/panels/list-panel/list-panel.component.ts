@@ -1,6 +1,6 @@
 import {Component,  OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {DgraphDataProvider, DgraphService, QueryGen} from "@solenopsys/lib-dgraph";
+import {DgraphDataProvider, DgraphService, QueryGen} from "@solenopsys/fl-dgraph";
 
 import {firstValueFrom} from "rxjs";
 

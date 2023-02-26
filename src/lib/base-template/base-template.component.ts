@@ -2,10 +2,10 @@ import {Component, ElementRef, Input, OnInit} from '@angular/core';
 import {Select, Store} from '@ngxs/store';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {Cluster, ClusterState, SelectCluster} from '@solenopsys/lib-clusters';
+import {Cluster, ClusterState, SelectCluster} from '@solenopsys/fl-clusters';
 import {MenuItemData} from "@solenopsys/ui-navigate";
 import {ColorSchemesService} from "@solenopsys/ui-themes";
-import {ModulesService} from "@solenopsys/lib-globals";
+import {ModulesService} from "@solenopsys/fl-globals";
 import {Router} from "@angular/router";
 
 

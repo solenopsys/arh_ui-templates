@@ -1,7 +1,7 @@
 import {Action, createSelector, State, StateContext} from "@ngxs/store";
 import {Injectable, Injector} from "@angular/core";
 import {patch} from "@ngxs/store/operators";
-import {DataPageConfig} from "@solenopsys/lib-dgraph";
+import {DataPageConfig} from "@solenopsys/fl-dgraph";
 
 export class GridStateModel {
   constructor(public configs: { [key: string]: DataPageConfig }) {

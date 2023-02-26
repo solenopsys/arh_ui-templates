@@ -1,11 +1,11 @@
 import {Component, Inject, Injector, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Actions, ofActionDispatched, Store} from '@ngxs/store';
-import {DataPageConfig} from "@solenopsys/lib-dgraph";
+import {DataPageConfig} from "@solenopsys/fl-dgraph";
 import {Navigate} from "@ngxs/router-plugin";
 import {Observable, Subscription} from "rxjs";
 import {DeleteRowDialog, GridState, LoadGridConf} from "./table.store";
-import {IdService} from "@solenopsys/lib-globals";
+import {IdService} from "@solenopsys/fl-globals";
 import {DeleteRow,  InitGroup, RowsGroup} from "@solenopsys/ui-lists";
 import {COMMANDS_MAP} from "../commands";
 import {DialogConfig} from "@solenopsys/ui-modals";

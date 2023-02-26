@@ -1,7 +1,7 @@
 import {Component, Injector, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {now} from 'moment';
-import {DataItemInterface, DataPageConfig, DgraphService} from "@solenopsys/lib-dgraph";
+import {DataItemInterface, DataPageConfig, DgraphService} from "@solenopsys/fl-dgraph";
 import {firstValueFrom, Observable} from "rxjs";
 import {GridState} from "@solenopsys/ui-templates";
 import {Store} from "@ngxs/store";

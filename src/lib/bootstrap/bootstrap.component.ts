@@ -2,8 +2,8 @@ import {Component, ElementRef, Inject, Input, OnInit, ViewEncapsulation} from '@
 import {ColorSchemesService} from "@solenopsys/ui-themes";
 import {Router} from "@angular/router";
 import {Select, Store} from "@ngxs/store";
-import {ModulesService} from "@solenopsys/lib-globals";
-import {Cluster, ClusterState} from "@solenopsys/lib-clusters";
+import {ModulesService} from "@solenopsys/fl-globals";
+import {Cluster, ClusterState} from "@solenopsys/fl-clusters";
 import {Observable} from "rxjs";
 import {MenuItemData} from "@solenopsys/ui-navigate";
 
