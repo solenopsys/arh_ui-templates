@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {DgraphDataProvider, DgraphService, QueryGen} from "@solenopsys/fl-dgraph";
 
 import {firstValueFrom} from "rxjs";
+import {FreeProvider} from "@solenopsys/ui-utils";
 
 @Component({
   selector: 'ui-list-panel',
@@ -12,7 +13,7 @@ import {firstValueFrom} from "rxjs";
 export class ListPanelComponent implements OnInit {
   scope!: any;
   items = {};
-  dp!: DgraphDataProvider;
+  dp!: FreeProvider;
   tableKey!: string;
   module!: string;
 
@@ -28,6 +29,7 @@ export class ListPanelComponent implements OnInit {
       console.log('PARAMS CHANGED');
       this.tableKey = params.table;
     });
+    //@ts-ignore
     this.dp = new DgraphDataProvider(this.draph, this.module + '.scope');
   }
 
