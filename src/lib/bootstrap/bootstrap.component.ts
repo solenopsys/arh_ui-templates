@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 import {MenuItemData} from "@solenopsys/ui-navigate";
 
 @Component({
-  selector: 'hyperconverged-bootstrap',
+  selector: 'ui-bootstrap',
   templateUrl: './bootstrap.component.html',
   styleUrls: ['./bootstrap.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
