@@ -33,10 +33,8 @@ export class BootstrapComponent implements OnInit {
               private router: Router,
               private store: Store,
               private modules: ModulesService,
-              @Inject('single_start') public singleStart,
               @Inject('menu') private $menu:Observable<any>
   ) {
-    console.log("BOOTSTRAP singleStart: "+singleStart)
 
     $menu.subscribe(menu=>{
       this.menu=menu
