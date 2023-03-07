@@ -41,6 +41,7 @@ export class BaseTemplateComponent implements OnInit {
 
 
 
+    console.log("INIT COLORS", this.elementRef.nativeElement.style)
     cs.initColors(this.elementRef.nativeElement.style);
   }
 
