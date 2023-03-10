@@ -14,9 +14,9 @@ import {BootstrapComponent} from "./bootstrap/bootstrap.component";
 
 import {DeclaredService} from "@solenopsys/ui-utils";
 import {UILayoutsModule} from "@solenopsys/ui-layouts";
-import {UIModalsModule} from "@solenopsys/ui-modals";
 import {UIControlsModule} from "@solenopsys/ui-controls";
 import {UINavigateModule} from "@solenopsys/ui-navigate";
+import {UIModalsModule} from "@solenopsys/ui-modals";
 
 export const TABLE_PAGE = (path: string) => {
     return {
@@ -42,9 +42,10 @@ const components = [
         RouterModule,
         UIFormsModule,
         UIIconsModule,
+
+        UILayoutsModule,
         UIListsModule,
         UIModalsModule,
-        UILayoutsModule,
         UIControlsModule,
         UINavigateModule
     ],
