@@ -7,20 +7,23 @@ import {MenuItemData} from "@solenopsys/ui-navigate";
 import {ColorSchemesService} from "@solenopsys/ui-themes";
 import {ModulesService} from "@solenopsys/fl-globals";
 import {Router} from "@angular/router";
+import {ResourceData} from "@solenopsys/ui-controls";
+import {InterfaceState, TopToolbarData} from "../interface.store";
 
 
 @Component({
   selector: 'ui-base-template',
   templateUrl: './base-template.component.html',
-  styleUrls: ['./base-template.component.css'],
+  styleUrls: ['./base-template.component.scss'],
 })
-export class BaseTemplateComponent implements OnInit {
+export class BaseTemplateComponent  {
 
 
   mobileMenu = false;
   title = 'solenopsys';
-  @Select(ClusterState.getCurrent) current$!: Observable<Cluster>;
-  @Select(ClusterState.getClusters) clusters$!: Observable<Cluster[]>;
+
+  @Select(InterfaceState.getTopPanel) topPanel$!: Observable<TopToolbarData>;
+  @Select(InterfaceState.getTopPanelTabs) topPanelTabs$: Observable<{id:string,title:string}[]>;
 
   @Input()
   menu: MenuItemData[] = [];
@@ -35,6 +38,7 @@ export class BaseTemplateComponent implements OnInit {
               private router: Router,
               private store: Store,
               private modules: ModulesService,
+
   ) {
 
 
@@ -45,15 +49,7 @@ export class BaseTemplateComponent implements OnInit {
     cs.initColors(this.elementRef.nativeElement.style);
   }
 
-  ngOnInit(): void {
 
-
-    this.tabs$ = this.clusters$.pipe(map((clusters: Cluster[]) => {
-      return clusters?.map(item => {
-        return {id: item.host, title: item.title};
-      });
-    }));
-  }
 
   showMenu() {
     console.log('OK SHOW');

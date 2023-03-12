@@ -17,7 +17,7 @@ function clone(obj) {
 @Component({
   selector: 'ui-form-panel',
   templateUrl: './form-panel.component.html',
-  styleUrls: ['./form-panel.component.css']
+  styleUrls: ['./form-panel.component.scss']
 })
 export class FormPanelComponent implements OnInit {
   formData = {};

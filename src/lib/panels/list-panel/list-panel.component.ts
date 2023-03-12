@@ -8,7 +8,7 @@ import {FreeProvider} from "@solenopsys/ui-utils";
 @Component({
   selector: 'ui-list-panel',
   templateUrl: './list-panel.component.html',
-  styleUrls: ['./list-panel.component.css']
+  styleUrls: ['./list-panel.component.scss']
 })
 export class ListPanelComponent implements OnInit {
   scope!: any;

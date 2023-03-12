@@ -14,7 +14,7 @@ import {DialogConfig} from "@solenopsys/ui-modals";
 @Component({
   selector: 'ui-table-page',
   templateUrl: './table-page.component.html',
-  styleUrls: ['./table-page.component.css']
+  styleUrls: ['./table-page.component.scss']
 })
 export class TablePageComponent implements OnInit, OnDestroy {
   conf$: Observable<any>;
