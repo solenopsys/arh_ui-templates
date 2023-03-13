@@ -17,6 +17,8 @@ import {UILayoutsModule} from "@solenopsys/ui-layouts";
 import {UIControlsModule} from "@solenopsys/ui-controls";
 import {UINavigateModule} from "@solenopsys/ui-navigate";
 import {UIModalsModule} from "@solenopsys/ui-modals";
+import {DynamicLoaderComponent} from "./dynamic/dynamic-loader.component";
+import {MenuDynamicComponent} from "./dynamic/menu-dynamic.component";
 
 export const TABLE_PAGE = (path: string) => {
     return {
@@ -30,19 +32,18 @@ const components = [
 
     FormPanelComponent,
     ListPanelComponent,
-    InfoPanelComponent
-
+    InfoPanelComponent,
+    MenuDynamicComponent
 ];
 
 @NgModule({
-    declarations: [components, BaseTemplateComponent,
+    declarations: [components, BaseTemplateComponent,DynamicLoaderComponent,
         BootstrapComponent, TablePageComponent],
     imports: [
         CommonModule,
         RouterModule,
         UIFormsModule,
         UIIconsModule,
-
         UILayoutsModule,
         UIListsModule,
         UIModalsModule,
