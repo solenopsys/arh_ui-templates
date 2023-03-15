@@ -17,9 +17,9 @@ export type SideToolbarData = {
 }
 
 export type PanelConfig={
-    component: any,
+    component: string,
     dataProviderName: string,
-    dataKey: string
+    dataKey?: string
 }
 
 

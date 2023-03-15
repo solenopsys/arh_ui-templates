@@ -10,7 +10,7 @@ export type MenuConfig = {
 }
 
 export class DataLoadRequest {
-    static readonly type = "[Panel] Data Load Request";
+    static readonly type = "[Menu] Data Load Request";
 
     constructor(public dataProviderName: string, type: string, public dataKey: string) {
     }

@@ -1,0 +1,7 @@
+<ng-container *ngIf="this.config$ | async; let config ">
+    <ui-menu [data]="config.items"
+             [current]="config.current"
+    ></ui-menu>
+</ng-container>
+
+<!--    (clickEvent)="events.emit($event)"-->

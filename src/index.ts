@@ -4,3 +4,6 @@ export * from './lib/bootstrap/bootstrap.component';
 export * from './lib/table-page/table.store';
 export * from './lib/panels/form-panel/form-panel.component';
 export * from './lib/stores/interface.store';
+export * from './lib/dynamic/menu-dynamic.component';
+export * from './lib/stores/menu.store';
+export * from './lib/stores/menu-loader.service';

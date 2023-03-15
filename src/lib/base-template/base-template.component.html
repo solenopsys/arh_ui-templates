@@ -10,7 +10,7 @@
     <div class="left-block">
         <div [ngClass]="mobileMenu?'main_menu_mobile':'main_menu'" (click)="mobileMenu=false">
             <div class="main_menu_wrapper"  *ngIf="leftPanel$ |async; let panelConfig">
-                <ui-dynamic-loader [config]="panelConfig" ></ui-dynamic-loader>
+                <ui-dynamic-loader [config]="panelConfig"  ></ui-dynamic-loader>
             </div>
         </div>
     </div>

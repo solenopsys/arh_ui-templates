@@ -29,16 +29,16 @@ export const TABLE_PAGE = (path: string) => {
 };
 
 const components = [
-
     FormPanelComponent,
     ListPanelComponent,
     InfoPanelComponent,
-    MenuDynamicComponent
+
 ];
 
 @NgModule({
-    declarations: [components, BaseTemplateComponent,DynamicLoaderComponent,
-        BootstrapComponent, TablePageComponent],
+    declarations: [components, BaseTemplateComponent,
+        BootstrapComponent, TablePageComponent, DynamicLoaderComponent,
+        MenuDynamicComponent],
     imports: [
         CommonModule,
         RouterModule,
