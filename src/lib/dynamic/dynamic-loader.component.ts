@@ -21,8 +21,7 @@ export class DynamicLoaderComponent {
             const factory = this.resolver.resolveComponentFactory(dc);
             const componentRef = this.entry.createComponent(factory);
             console.log("componentRef LOADED", componentRef)
-            const data = {providerName: panelConfig.dataProviderName, key: panelConfig.dataKey};
-            (componentRef.instance as DynamicAbstract).setLoadFrom(data);
+            componentRef.instance['id']=panelConfig.id;
         })
 
 

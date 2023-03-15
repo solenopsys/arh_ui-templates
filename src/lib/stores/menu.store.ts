@@ -1,6 +1,6 @@
 import {MenuItemData} from "@solenopsys/ui-navigate";
 import {Injectable} from "@angular/core";
-import {Action, createSelector, State, StateContext} from "@ngxs/store";
+import {Action, createSelector, State, StateContext, Store} from "@ngxs/store";
 import {patch} from "@ngxs/store/operators";
 import {MenuLoaderService} from "./menu-loader.service";
 
@@ -9,15 +9,28 @@ export type MenuConfig = {
     items: MenuItemData[]
 }
 
+export type MenuConfigData = {
+    data: { [dataKey: string]: MenuConfig },
+    current: string
+}
+
 export class DataLoadRequest {
     static readonly type = "[Menu] Data Load Request";
 
-    constructor(public dataProviderName: string, type: string, public dataKey: string) {
+    constructor(public menuId: string, public dataKey: string) {
     }
 }
 
+export class AddComponent {
+    static readonly type = "[Menu] Add Component Storage";
+
+    constructor(public menuId: string) {
+    }
+}
+
+
 export class MenuStateModel {
-    configs: { [key: string]: MenuConfig }
+    configs: { [menuId: string]: MenuConfigData }
 }
 
 
@@ -32,22 +45,68 @@ export class MenuStateModel {
 @Injectable()
 export class MenuState {
 
-    constructor(private mls: MenuLoaderService) {
+    constructor(private mls: MenuLoaderService, private store: Store) {
     }
 
-    static getBlockByKey(key: string) {
+    static getMenuConfig(menuId: string) {
         return createSelector([MenuState], (state: MenuStateModel) => {
-            return state.configs[key];
+            const config = state.configs[menuId];
+            return config.data[config.current];
         });
     }
 
+
     @Action(DataLoadRequest)
-    async dataLoad({getState, setState}: StateContext<MenuStateModel>, {dataKey, dataProviderName}: DataLoadRequest) {
-        const res = await this.mls.load(dataProviderName, dataKey);
+    async dataLoad({getState, setState}: StateContext<MenuStateModel>, {menuId, dataKey}: DataLoadRequest) {
+        if (dataKey == undefined) {
+            throw new Error("dataKey is undefined");
+        }
+
+        const noMenuId = getState().configs[menuId] == undefined;
+        const noDataKey = noMenuId || getState().configs[menuId].data[dataKey] == undefined;
+
+        if (noMenuId || noDataKey) {
+            const res = await this.mls.loadByKey(dataKey);
+            const menuBlock = {
+                data: patch({
+                    [dataKey]: {
+                        current: "",
+                        items: res
+                    }
+                }),
+                current: dataKey
+            };
+            setState(
+                patch({
+                    configs: patch({
+                        [menuId]: patch(menuBlock)
+                    })
+                })
+            );
+        } else {
+            setState(
+                patch({
+                    configs: patch({
+                        [menuId]: patch(
+                            {
+                                current: dataKey
+                            }
+                        )
+                    })
+                }));
+        }
+    }
+
+    @Action(AddComponent)
+    async addComponent({getState, setState}: StateContext<MenuStateModel>, {menuId}: AddComponent) {
         setState(
             patch({
-                configs: {[dataKey]: {items: res, current: ""}}
+                configs: patch({
+                    [menuId]: {data: {}, current: ""}
+                })
             })
         );
     }
+
+
 }

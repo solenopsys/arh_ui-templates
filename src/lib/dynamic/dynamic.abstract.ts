@@ -2,7 +2,7 @@ import {MenuDynamicComponent} from "./menu-dynamic.component";
 
 export interface DynamicAbstract  {
 
-     setLoadFrom(loadFrom: { providerName: string, key: string }) ;
+     //setLoadFrom(loadFrom: { providerName: string, key: string }) ;
 }
 
 

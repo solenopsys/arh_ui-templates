@@ -18,8 +18,8 @@ export type SideToolbarData = {
 
 export type PanelConfig={
     component: string,
-    dataProviderName: string,
-    dataKey?: string
+    store: string,
+    id: string //unique id component
 }
 
 

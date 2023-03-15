@@ -1,10 +1,13 @@
 import {MenuItemData} from "@solenopsys/ui-navigate";
 import {Injectable} from "@angular/core";
+import {SetLeftPanel} from "./interface.store";
 
 
 export interface MenuLoader {
     load(dataProviderName: string, dataKey: string): Promise<MenuItemData[]>;
 }
+
+
 
 export interface MenuLoaderProvider {
     load(dataKey: string): Promise<MenuItemData[]>
@@ -16,9 +19,15 @@ export interface MenuLoaderProvider {
 export class MenuLoaderService implements MenuLoader {
     private dataProviders: { [key: string]: MenuLoaderProvider } = {};
 
+    private providerMapping: { [key: string]: string } = {};
+
 
     addProvider(name: string, provider: MenuLoaderProvider) {
         this.dataProviders[name] = provider;
+    }
+
+    addMapping(dataKey: string, dataProviderName: string) {
+        this.providerMapping[dataKey] = dataProviderName;
     }
 
     load(dataProviderName: string, dataKey: string): Promise<MenuItemData[]> {
@@ -35,5 +44,9 @@ export class MenuLoaderService implements MenuLoader {
                 reject("DataProvider not found");
             }
         });
+    }
+
+    loadByKey(dataKey: string): Promise<MenuItemData[]> {
+        return this.load(this.providerMapping[dataKey], dataKey);
     }
 }
