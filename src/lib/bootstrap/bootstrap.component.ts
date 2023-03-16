@@ -13,7 +13,7 @@ import {MenuItemData} from "@solenopsys/ui-navigate";
   styleUrls: ['./bootstrap.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class BootstrapComponent implements OnInit {
+export class BootstrapComponent  {
 
   @Select(ClusterState.getCurrent) current$!: Observable<Cluster>;
 
@@ -33,12 +33,7 @@ export class BootstrapComponent implements OnInit {
               private router: Router,
               private store: Store,
               private modules: ModulesService,
-              @Inject('menu') private $menu:Observable<any>
   ) {
-
-    $menu.subscribe(menu=>{
-      this.menu=menu
-    })
 
     // this.current$.pipe().subscribe(cluster=>{
     //   this.menu = [];
@@ -66,6 +61,5 @@ export class BootstrapComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-  }
+
 }

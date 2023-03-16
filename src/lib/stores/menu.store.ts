@@ -3,6 +3,7 @@ import {Injectable} from "@angular/core";
 import {Action, createSelector, State, StateContext, Store} from "@ngxs/store";
 import {patch} from "@ngxs/store/operators";
 import {MenuLoaderService} from "./menu-loader.service";
+import {Navigate} from "@ngxs/router-plugin";
 
 export type MenuConfig = {
     current: string,
@@ -25,6 +26,13 @@ export class AddComponent {
     static readonly type = "[Menu] Add Component Storage";
 
     constructor(public menuId: string) {
+    }
+}
+
+export class SelectMenuItem {
+    static readonly type = "[Menu] Select Menu Item";
+
+    constructor(public menuId: string, public itemId: string) {
     }
 }
 
@@ -106,6 +114,21 @@ export class MenuState {
                 })
             })
         );
+    }
+
+    @Action(SelectMenuItem)
+    async selectMenuItem({getState, setState}: StateContext<MenuStateModel>, {menuId, itemId}: SelectMenuItem) {
+
+        const currentData = getState().configs[menuId].current;
+        const menuConfig = {[currentData]: patch({current: itemId})}
+        setState(
+            patch({
+                configs: patch({
+                    [menuId]: patch({data: patch(menuConfig)})
+                })
+            })
+        );
+        this.store.dispatch(new Navigate([itemId]));
     }
 
 
