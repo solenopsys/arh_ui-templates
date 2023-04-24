@@ -19,6 +19,10 @@ import {UINavigateModule} from "@solenopsys/ui-navigate";
 import {UIModalsModule} from "@solenopsys/ui-modals";
 import {DynamicLoaderComponent} from "./dynamic/dynamic-loader.component";
 import {MenuDynamicComponent} from "./dynamic/menu-dynamic.component";
+import {View3DComponent} from "./view3-d/view3-d.component";
+import {DoListComponent} from "./do-list/do-list.component";
+import {MainPageComponent} from "./main-page/main-page.component";
+import {TopPanelComponent} from "./top-panel/top-panel.component";
 
 export const TABLE_PAGE = (path: string) => {
     return {
@@ -32,7 +36,10 @@ const components = [
     FormPanelComponent,
     ListPanelComponent,
     InfoPanelComponent,
-
+    MainPageComponent,
+    TopPanelComponent,
+    DoListComponent,
+    View3DComponent,
 ];
 
 @NgModule({
@@ -49,6 +56,9 @@ const components = [
         UIModalsModule,
         UIControlsModule,
         UINavigateModule
+    ],
+    exports: [
+        TopPanelComponent
     ],
     providers: []
 })

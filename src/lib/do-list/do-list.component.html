@@ -1,0 +1,15 @@
+<div style="width: 100% ;background-color: #f3f3f3;margin-top: 50px;padding-bottom: 20px;">
+  <div style="display: flex;justify-content: center;" class="topPanel">
+    <div style="display: flex;max-width: 2200px; width: 1800px">
+      <div style="text-align: center;max-width: 1200px; padding-top: 40px">
+        <div style="font-size: 35px;">What can you do here?</div>
+        <div style="  display: flex;justify-content: center;  ">
+          <div class="textBlock" *ngFor="let item of list">
+            <p>{{item.title}}</p>
+<!--            <a [routerLink]="item.link">-></a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

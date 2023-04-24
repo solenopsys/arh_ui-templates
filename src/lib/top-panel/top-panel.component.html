@@ -1,0 +1,25 @@
+<div style="display: flex;justify-content: center;" class="topPanel">
+  <div  style="display: flex;max-width: 2200px; width: 1800px">
+    <div>
+      <a [routerLink]="'/'">
+        <img src="/assets/logo.svg" style="padding-left: 20px;padding-top: 15px;padding-bottom: 5px; width: 100px;">
+      </a>
+    </div>
+    <div style="display: flex;padding-top: 20px;padding-left: 70px">
+      <div *ngFor="let item of menu" style="padding-left: 30px">
+        <a [routerLink]="item.link" style="text-decoration: none;">{{item.name}}</a>
+      </div>
+    </div>
+
+    <div style="display: flex;padding-top: 20px;padding-left: 70px">
+
+        <a [routerLink]="'/login'" style="text-decoration: none;">Login</a>
+
+
+
+    </div>
+  </div>
+
+</div>
+
+

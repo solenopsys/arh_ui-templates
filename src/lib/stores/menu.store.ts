@@ -120,11 +120,10 @@ export class MenuState {
     async selectMenuItem({getState, setState}: StateContext<MenuStateModel>, {menuId, itemId}: SelectMenuItem) {
 
         const currentData = getState().configs[menuId].current;
-        const menuConfig = {[currentData]: patch({current: itemId})}
         setState(
             patch({
                 configs: patch({
-                    [menuId]: patch({data: patch(menuConfig)})
+                    [menuId]: patch({data: patch({[currentData]: patch({current: itemId})})})
                 })
             })
         );

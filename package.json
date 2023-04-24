@@ -2,7 +2,8 @@
   "name": "@solenopsys/ui-templates",
   "version": "0.0.1",
   "dependencies": {
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "three": "^0.147.0"
   },
   "scripts": {
     "test": "node index.js",

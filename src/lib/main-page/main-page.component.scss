@@ -1,0 +1,24 @@
+.textGradient{
+  background:-webkit-linear-gradient(315deg, rgb( 211,66 , 146) 25%, rgb( 255, 126,100 ));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button{
+  background: #dbdbdb;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px;
+}
+
+.textBlock{
+  width: 220px; text-align: left;
+  padding:20px;
+}
+
+.textBlock b{
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+/*background-image:*/
