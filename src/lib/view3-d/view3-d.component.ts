@@ -2,12 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewEncapsulat
 import { StlRenderer } from "./test_scene";
 
 
-const stlRenderer=new StlRenderer();
 
-function animate() {
-  requestAnimationFrame( animate );
-  stlRenderer.render();
-}
 
 
 @Component({
@@ -16,27 +11,34 @@ function animate() {
   styleUrls: ["./view3-d.component.scss"],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class View3DComponent implements OnInit, AfterViewInit {
+export class View3DComponent implements  AfterViewInit {
   @ViewChild("3dDraw", { static: true })
   drawElement: ElementRef<HTMLCanvasElement>;
   @ViewChild("3dDraw1", { static: true })
   drawElement1: ElementRef<HTMLCanvasElement>;
+  stlRenderer:StlRenderer
 
 
   constructor() {
+    this.stlRenderer =new StlRenderer();
+
+
 
   }
 
-  ngOnInit(): void {
-
+   animate() {
+    requestAnimationFrame( this.animate );
+     this.stlRenderer.render();
   }
+
+
 
   ngAfterViewInit(): void {
 
-    this.drawElement.nativeElement.appendChild(stlRenderer.renderer.domElement);
+    this.drawElement.nativeElement.appendChild(this.stlRenderer.renderer.domElement);
  // stlRenderer.loadStl("/assets/3d/usb.STL");
-   stlRenderer.load3MF("/assets/3d/USB3.3MF");
-    animate()
+   this.stlRenderer.load3MF("/assets/3d/USB3.3MF");
+    this.animate()
   }
 
 

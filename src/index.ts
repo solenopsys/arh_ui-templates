@@ -9,3 +9,4 @@ export * from './lib/stores/menu.store';
 export * from './lib/stores/menu-loader.service';
 export * from './lib/road-map/road-map.component';
 export * from './lib/main-page/main-page.component';
+export * from './lib/register-template/register-template.component';
