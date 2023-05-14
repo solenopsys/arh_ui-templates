@@ -15,7 +15,8 @@ import {MenuItemData} from "@solenopsys/ui-navigate";
 })
 export class BootstrapComponent  {
 
-  @Select(ClusterState.getCurrent) current$!: Observable<Cluster>;
+   @Select(ClusterState.getCurrent) public current$!: Observable<Cluster>;
+
 
   @Input()
   menu: MenuItemData[] = [];

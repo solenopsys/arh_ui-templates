@@ -7,13 +7,13 @@
     </div>
     <div style="display: flex;padding-top: 20px;padding-left: 70px">
       <div *ngFor="let item of menu" style="padding-left: 30px">
-        <a [routerLink]="item.link" style="text-decoration: none;">{{item.name}}</a>
+        <a [routerLink]="['/'+item.link+'/.']" style="text-decoration: none;">{{item.name}}</a>
       </div>
     </div>
 
     <div style="display: flex;padding-top: 20px;padding-left: 70px">
 
-        <a [routerLink]="'/login'" style="text-decoration: none;">Login</a>
+        <a href="https://auth.solenopsys.org" style="text-decoration: none;">Login</a>
 
 
 
