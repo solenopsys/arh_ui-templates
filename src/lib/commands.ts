@@ -1,6 +1,5 @@
 import {Navigate} from "@ngxs/router-plugin";
-import {DeleteRowDialog} from "@solenopsys/ui-templates";
-
+import {DeleteRowDialog} from "./table-page/table.store";
 
 interface Command {
   icon: string

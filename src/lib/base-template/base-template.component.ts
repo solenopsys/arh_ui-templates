@@ -8,7 +8,7 @@ import {ModulesService} from "@solenopsys/fl-globals";
 import {Router} from "@angular/router";
 import {InterfaceStateModel, PanelConfig, SelectTab, SetLeftPanel} from "../stores/interface.store";
 import {Navigate} from "@ngxs/router-plugin";
-import {DataLoadRequest} from "@solenopsys/ui-templates";
+import {DataLoadRequest} from "../stores/menu.store";
 
 
 @Component({

@@ -1,9 +1,9 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {DynamicAbstract} from "@solenopsys/ui-utils";
-import {AddComponent, DataLoadRequest, MenuConfig, MenuState, SelectMenuItem} from "../stores/menu.store";
+
+import {AddComponent, MenuConfig, MenuState, SelectMenuItem} from "../stores/menu.store";
 import {Store} from "@ngxs/store";
 import {Observable} from "rxjs";
-import {Navigate} from "@ngxs/router-plugin";
+import {DynamicAbstract} from "./dynamic.abstract";
 
 @Component({
     selector: 'ui-menu-dynamic',

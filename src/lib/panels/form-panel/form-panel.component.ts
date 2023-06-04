@@ -3,8 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {now} from 'moment';
 import {DataItemInterface, DataPageConfig, DgraphService} from "@solenopsys/fl-dgraph";
 import {firstValueFrom, Observable} from "rxjs";
-import {GridState} from "@solenopsys/ui-templates";
 import {Store} from "@ngxs/store";
+import {GridState} from "../../table-page/table.store";
 
 interface UIdMap {
   [key: string]: string;

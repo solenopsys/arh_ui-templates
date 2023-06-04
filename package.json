@@ -1,11 +1,17 @@
 {
   "name": "@solenopsys/ui-templates",
-  "version": "0.0.1",
-  "dependencies": {
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@solenopsys/ui-controls": "0.1.0",
+    "@solenopsys/ui-forms": "0.1.0",
+    "@solenopsys/ui-layouts": "0.1.0",
+    "@solenopsys/ui-lists": "0.1.0",
+    "@solenopsys/ui-modals": "0.1.0",
+    "@solenopsys/ui-navigate": "0.1.0",
+    "@solenopsys/ui-utils": "0.1.0",
     "moment": "^2.29.4"
   },
   "scripts": {
-    "test": "node index.js",
-    "build": "etsc -p tsconfig.lib.json"
+    "build": "ng-packagr -p ng-package.json -c ../../../../tsconfig.base.json"
   }
 }

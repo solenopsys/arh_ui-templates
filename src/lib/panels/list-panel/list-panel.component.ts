@@ -1,9 +1,9 @@
 import {Component,  OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DgraphDataProvider, DgraphService, QueryGen} from "@solenopsys/fl-dgraph";
+import {FreeProvider} from "@solenopsys/ui-controls";
 
 import {firstValueFrom} from "rxjs";
-import {FreeProvider} from "@solenopsys/ui-utils";
 
 @Component({
   selector: 'ui-list-panel',
