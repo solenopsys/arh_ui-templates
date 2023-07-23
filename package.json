@@ -12,6 +12,6 @@
     "moment": "^2.29.4"
   },
   "scripts": {
-    "build": "xs-pack"
+    "build": "ng-packagr -p xs-package.json -c ../../../../tsconfig.packages.json"
   }
 }
