@@ -21,7 +21,6 @@ import { DynamicLoaderComponent } from "./dynamic/dynamic-loader.component";
 import { MenuDynamicComponent } from "./dynamic/menu-dynamic.component";
 import { DoListComponent } from "./do-list/do-list.component";
 import { MainPageComponent } from "./main-page/main-page.component";
-import { TopPanelComponent } from "./top-panel/top-panel.component";
 import { RegisterTemplateComponent } from "./register-template/register-template.component";
 
 export const TABLE_PAGE = (path: string) => {
@@ -37,7 +36,7 @@ const components = [
   ListPanelComponent,
   InfoPanelComponent,
   MainPageComponent,
-  TopPanelComponent,
+
   DoListComponent,
 ];
 
@@ -62,7 +61,7 @@ const components = [
     UIControlsModule,
     UINavigateModule,
   ],
-  exports: [TopPanelComponent, RegisterTemplateComponent],
+  exports: [RegisterTemplateComponent, BaseTemplateComponent],
   providers: [],
 })
 export class UITemplatesModule {

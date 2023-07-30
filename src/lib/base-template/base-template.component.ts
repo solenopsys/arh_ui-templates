@@ -27,8 +27,7 @@ export class BaseTemplateComponent {
     leftPanel$: Observable<PanelConfig>;
 
 
-    @Input()
-    menu: MenuItemData[] = [];
+
 
 
     constructor(private cs: ColorSchemesService,
@@ -56,7 +55,7 @@ export class BaseTemplateComponent {
     selectTab(tab: string) {
         this.store.dispatch(new SelectTab(tab));
         this.store.dispatch(new Navigate([tab]))
-        this.store.dispatch(new DataLoadRequest("menuIdBla", tab));
+    //    this.store.dispatch(new DataLoadRequest("menuIdBla", tab));
     }
 }
 
