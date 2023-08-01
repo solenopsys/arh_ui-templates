@@ -18,7 +18,6 @@ export type SideToolbarData = {
 
 export type PanelConfig={
     component: string,
-    store: string,
     id: string //unique id component
 }
 
@@ -26,7 +25,7 @@ export type PanelConfig={
 
 export class InterfaceStateModel {
     topToolbar: TopToolbarData
-    // leftToolbar?: SideToolbarData
+   //  leftToolbar?: SideToolbarData
      leftPanel?: PanelConfig
     // rightToolbar?: SideToolbarData
     // rightPanel?: PanelConfig

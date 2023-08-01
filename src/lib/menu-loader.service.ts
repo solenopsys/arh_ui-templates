@@ -1,6 +1,5 @@
 import {MenuItemData} from "@solenopsys/ui-navigate";
 import {Injectable} from "@angular/core";
-import {SetLeftPanel} from "./interface.store";
 
 
 export interface MenuLoader {
@@ -14,7 +13,7 @@ export interface MenuLoaderProvider {
 }
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class MenuLoaderService implements MenuLoader {
     private dataProviders: { [key: string]: MenuLoaderProvider } = {};
@@ -23,6 +22,7 @@ export class MenuLoaderService implements MenuLoader {
 
 
     addProvider(name: string, provider: MenuLoaderProvider) {
+        console.log("SET PROVIDER",name,provider)
         this.dataProviders[name] = provider;
     }
 
@@ -32,6 +32,7 @@ export class MenuLoaderService implements MenuLoader {
 
     load(dataProviderName: string, dataKey: string): Promise<MenuItemData[]> {
         console.log("MENULOADERSERVICE.load", dataProviderName, dataKey);
+        console.log("PROVIDERS",this.dataProviders);
         return new Promise((resolve, reject) => {
             const dataProvider = this.dataProviders[dataProviderName];
             if (dataProvider) {

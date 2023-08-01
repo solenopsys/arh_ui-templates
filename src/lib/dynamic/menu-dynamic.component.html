@@ -1,6 +1,8 @@
 <ng-container *ngIf="this.menuData$ | async; let config ">
-    <ui-menu [data]="config.items"
-             [current]="config.current"
-             (clickEvent)="navigateByClick($event)" ></ui-menu>
+
+        <ui-menu [data]="config.items"
+                 [current]="config.current"
+                 (clickEvent)="navigateByClick($event)"></ui-menu>
+
 </ng-container>
 

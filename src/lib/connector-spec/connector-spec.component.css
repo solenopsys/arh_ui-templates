@@ -1,0 +1,7 @@
+.pin-group{
+       display: flex;
+}
+
+.pin-group div{
+    padding: 10px;
+}

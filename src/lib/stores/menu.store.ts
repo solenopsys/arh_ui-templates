@@ -2,17 +2,19 @@ import {MenuItemData} from "@solenopsys/ui-navigate";
 import {Injectable} from "@angular/core";
 import {Action, createSelector, State, StateContext, Store} from "@ngxs/store";
 import {patch} from "@ngxs/store/operators";
-import {MenuLoaderService} from "./menu-loader.service";
 import {Navigate} from "@ngxs/router-plugin";
+import {MenuLoaderService} from "../menu-loader.service";
 
 export type MenuConfig = {
     current: string,
-    items: MenuItemData[]
+    items: MenuItemData[],
+
 }
 
 export type MenuConfigData = {
     data: { [dataKey: string]: MenuConfig },
     current: string
+    visible: boolean
 }
 
 export class DataLoadRequest {
@@ -24,6 +26,13 @@ export class DataLoadRequest {
 
 export class AddComponent {
     static readonly type = "[Menu] Add Component Storage";
+
+    constructor(public menuId: string) {
+    }
+}
+
+export class HideComponent {
+    static readonly type = "[Menu] Hide";
 
     constructor(public menuId: string) {
     }
@@ -46,8 +55,9 @@ export class MenuStateModel {
     {
         name: 'menu',
         defaults: {
-            configs: {}
-        }
+            configs: {},
+        },
+
     }
 )
 @Injectable()
@@ -82,6 +92,7 @@ export class MenuState {
                         items: res
                     }
                 }),
+                visible:false,
                 current: dataKey
             };
             setState(
@@ -97,6 +108,7 @@ export class MenuState {
                     configs: patch({
                         [menuId]: patch(
                             {
+                                visible:true,
                                 current: dataKey
                             }
                         )
@@ -110,8 +122,19 @@ export class MenuState {
         setState(
             patch({
                 configs: patch({
-                    [menuId]: {data: {}, current: ""}
-                })
+                    [menuId]: {data: {}, current: "",visible:true}
+                }),
+            })
+        );
+    }
+
+    @Action(HideComponent)
+    async hideCompoent({getState, setState}: StateContext<MenuStateModel>, {menuId}: AddComponent) {
+        setState(
+            patch({
+                configs: patch({
+                    [menuId]: patch({visible:false})
+                }),
             })
         );
     }

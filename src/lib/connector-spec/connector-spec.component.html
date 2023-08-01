@@ -1,0 +1,17 @@
+<div *ngIf="spec$| async; let  spec">
+
+    <h1>{{spec.name}}</h1>
+
+    <div class="pin-group">
+        <div *ngFor="let item of spec.spec.groups['top']">
+            {{item}}
+        </div>
+    </div>
+
+    <div class="pin-group">
+        <div *ngFor="let item of spec.spec.groups['bottom']">
+            {{item}}
+        </div>
+    </div>
+
+</div>
