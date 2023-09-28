@@ -5,6 +5,7 @@ import {DataItemInterface, DataPageConfig, DgraphService} from "@solenopsys/fl-d
 import {firstValueFrom, Observable} from "rxjs";
 import {Store} from "@ngxs/store";
 import {GridState} from "../../table-page/table.store";
+import {now} from "moment";
 
 interface UIdMap {
   [key: string]: string;
