@@ -1,6 +1,6 @@
 {
   "name": "@solenopsys/ui-templates",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "peerDependencies": {
     "@solenopsys/ui-controls": "0.1.0",
     "@solenopsys/ui-forms": "0.1.0",
@@ -8,8 +8,7 @@
     "@solenopsys/ui-lists": "0.1.0",
     "@solenopsys/ui-modals": "0.1.0",
     "@solenopsys/ui-navigate": "0.1.0",
-    "@solenopsys/ui-utils": "0.1.0",
-    "moment": "^2.29.4"
+    "@solenopsys/ui-utils": "0.1.0"
   },
   "scripts": {
     "build": "ng-packagr -p xs-package.json -c ../../../configurations/typescript/libraries.json"

@@ -5,7 +5,6 @@ import {DataItemInterface, DataPageConfig, DgraphService} from "@solenopsys/fl-d
 import {firstValueFrom, Observable} from "rxjs";
 import {Store} from "@ngxs/store";
 import {GridState} from "../../table-page/table.store";
-import {now} from "moment";
 
 interface UIdMap {
   [key: string]: string;
@@ -68,6 +67,7 @@ export class FormPanelComponent implements OnInit {
 
   saveForm() {
     firstValueFrom( this.dataListInterface.save(this.itemId, this.formData, this.formDataBefore,this.conf )).then((result: { code: string, uids?: UIdMap }) => {
+      const currentDate =   Date.toDateString()
       if (result.code === 'Success') {
         console.log('NAVIGATE', result);
         // @ts-ignore
@@ -77,11 +77,11 @@ export class FormPanelComponent implements OnInit {
         }
 
         // @ts-ignore
-        this.messages.push({type: 'Saved', time: now()});
+        this.messages.push({type: 'Saved', time: currentDate});
 
       } else {
         // @ts-ignore
-        this.messages.push({type: 'Error', time: now()});
+        this.messages.push({type: 'Error', time: currentDate});
         console.error(result);
       }
     });
