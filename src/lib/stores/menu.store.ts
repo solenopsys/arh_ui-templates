@@ -3,7 +3,7 @@ import {Injectable} from "@angular/core";
 import {Action, createSelector, State, StateContext, Store} from "@ngxs/store";
 import {patch} from "@ngxs/store/operators";
 import {Navigate} from "@ngxs/router-plugin";
-import {MenuLoaderService} from "../menu-loader.service";
+import {firstValueFrom} from "rxjs";
 
 export type MenuConfig = {
     current: string,
@@ -16,6 +16,17 @@ export type MenuConfigData = {
     current: string
     visible: boolean
 }
+
+export interface MenuLoader {
+    load(dataProviderName: string, dataKey: string): Promise<MenuItemData[]>;
+}
+
+
+export interface MenuLoaderProvider {
+    load(dataKey: string): Promise<MenuItemData[]>
+}
+
+
 
 export class DataLoadRequest {
     static readonly type = "[Menu] Data Load Request";
@@ -45,9 +56,25 @@ export class SelectMenuItem {
     }
 }
 
+export class AddProvider {
+    static readonly type = "[Menu] Add Provider";
+
+    constructor(public name: string,public provider: MenuLoaderProvider) {
+    }
+}
+
+export class AddProviderMapping {
+    static readonly type = "[Menu] Add Provider Mapping";
+
+    constructor(public dataKey: string,public dataProviderName: string) {
+    }
+}
+
 
 export class MenuStateModel {
     configs: { [menuId: string]: MenuConfigData }
+    dataProviders: { [name: string]: MenuLoaderProvider }
+    providerMapping: { [dataKey: string]: string }
 }
 
 
@@ -56,14 +83,15 @@ export class MenuStateModel {
         name: 'menu',
         defaults: {
             configs: {},
+            dataProviders: {},
+            providerMapping: {}
         },
-
     }
 )
 @Injectable()
 export class MenuState {
 
-    constructor(private mls: MenuLoaderService, private store: Store) {
+    constructor( private store: Store) {
     }
 
     static getMenuConfig(menuId: string) {
@@ -71,6 +99,33 @@ export class MenuState {
             const config = state.configs[menuId];
             return config.data[config.current];
         });
+    }
+
+    static getProvider(providerName: string) {
+        return createSelector([MenuState], (state: MenuStateModel) => {
+            return state.dataProviders[providerName];
+        });
+    }
+
+    static getProviderName(dataKey: string) {
+        return createSelector([MenuState], (state: MenuStateModel) => {
+            return state.providerMapping[dataKey];
+        });
+    }
+
+    async load(dataProviderName: string, dataKey: string): Promise<MenuItemData[]> {
+        const dataProvider = await firstValueFrom(this.store.select(MenuState.getProvider(dataProviderName)));
+        if (dataProvider) {
+            return dataProvider.load(dataKey)
+        } else {
+            throw new Error("DataProvider not found")
+        }
+    }
+
+    async loadByKey(dataKey: string): Promise<MenuItemData[]> {
+        const dataProviderName = await firstValueFrom(this.store.select(MenuState.getProviderName(dataKey)));
+
+        return await this.load(dataProviderName, dataKey);
     }
 
 
@@ -84,7 +139,7 @@ export class MenuState {
         const noDataKey = noMenuId || getState().configs[menuId].data[dataKey] == undefined;
 
         if (noMenuId || noDataKey) {
-            const res = await this.mls.loadByKey(dataKey);
+            const res = await this.loadByKey(dataKey);
             const menuBlock = {
                 data: patch({
                     [dataKey]: {
@@ -115,6 +170,28 @@ export class MenuState {
                     })
                 }));
         }
+    }
+
+    @Action(AddProvider)
+    async addProvider({getState, setState}: StateContext<MenuStateModel>, {provider,name}: AddProvider) {
+        setState(
+            patch({
+                dataProviders: patch({
+                    [name]: provider
+                }),
+            })
+        );
+    }
+
+    @Action(AddProviderMapping)
+    async addProviderMapping({getState, setState}: StateContext<MenuStateModel>, {dataKey,dataProviderName}: AddProviderMapping) {
+        setState(
+            patch({
+                providerMapping: patch({
+                    [dataKey]:dataProviderName
+                }),
+            })
+        );
     }
 
     @Action(AddComponent)

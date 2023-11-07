@@ -4,7 +4,6 @@ export * from './lib/table-page/table.store';
 export * from './lib/panels/form-panel/form-panel.component';
 export * from './lib/road-map/road-map.component';
 export * from './lib/main-page/main-page.component';
-export * from './lib/menu-loader.service';
 export * from './lib/connector-spec/connector-spec.component';
 export * from './lib/dynamic/menu-dynamic.component';
 export * from './lib/dynamic/dynamic-loader.component';
