@@ -23,6 +23,7 @@ export class MenuDynamicComponent implements DynamicAbstract,OnInit {
     }
 
     ngOnInit(): void {
+        console.log("MENU INIT", this.id);
         this.store.dispatch(new AddComponent(this.id));
         this.menuData$ = this.store.select(MenuState.getMenuConfig(this.id));
     }

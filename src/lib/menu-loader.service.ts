@@ -22,11 +22,12 @@ export class MenuLoaderService implements MenuLoader {
 
 
     addProvider(name: string, provider: MenuLoaderProvider) {
-        console.log("SET PROVIDER",name,provider)
+        console.log("SET PROVIDER1",name,provider)
         this.dataProviders[name] = provider;
     }
 
     addMapping(dataKey: string, dataProviderName: string) {
+        console.log("ADD MAPPING1",dataKey,dataProviderName)
         this.providerMapping[dataKey] = dataProviderName;
     }
 
@@ -48,6 +49,8 @@ export class MenuLoaderService implements MenuLoader {
     }
 
     loadByKey(dataKey: string): Promise<MenuItemData[]> {
+        console.log("PROVIDER MAPPING",this.providerMapping);
+        console.log("DATA KEY",dataKey);
         return this.load(this.providerMapping[dataKey], dataKey);
     }
 }
